@@ -54,7 +54,7 @@ zig-out/bin/roguelike
 
 ## License
 
-MIT
+Apache-2.0
 
 ---
 
