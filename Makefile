@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -O2 -std=c99
-LDFLAGS = -lncurses
+LDFLAGS = -lncurses -lm
 
 SRC = src/main.c src/map.c src/entity.c src/game.c src/render.c src/input.c
 OBJ = $(SRC:.c=.o)
