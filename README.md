@@ -1,3 +1,5 @@
+![roguelike](.github/preview.png)
+
 # ROGUELIKE
 
 > A traditional ASCII roguelike. Permadeath. Procedural dungeons. Pure terminal.
