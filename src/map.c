@@ -175,13 +175,12 @@ void compute_fov(Map* map, int x, int y, int radius) {
     map->tiles[x][y].visible = 1;
     map->tiles[x][y].flags |= TILE_FLAG_EXPLORED;
 
-    int mult[4][4] = {
-        {1, 0, 0, 1},
-        {0, 1, 1, 0},
-        {0, -1, 1, 0},
-        {1, 0, 0, -1}
+    // all 8 octants (the old table only covered 4, leaving half the view dark)
+    static const int mult[8][4] = {
+        { 1,  0,  0,  1}, { 0,  1,  1,  0}, { 0, -1,  1,  0}, {-1,  0,  0,  1},
+        {-1,  0,  0, -1}, { 0, -1, -1,  0}, { 0,  1, -1,  0}, { 1,  0,  0, -1}
     };
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 8; i++) {
         cast_light(map, x, y, 1, 1.0, 0.0, radius,
                    mult[i][0], mult[i][1], mult[i][2], mult[i][3]);
     }
